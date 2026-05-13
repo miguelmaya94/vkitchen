@@ -1,0 +1,1303 @@
+:root {
+    --cream: #fffaf7;
+    --blush: #fdecef;
+    --rose: #c96f85;
+    --rose-dark: #8f3f52;
+    --brown: #4a2c2a;
+    --soft-brown: #7b5a55;
+    --white: #ffffff;
+    --shadow: 0 20px 50px rgba(143, 63, 82, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Georgia", "Times New Roman", serif;
+    background: var(--cream);
+    color: var(--brown);
+}
+
+nav {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    padding: 18px 8%;
+    box-shadow: 0 8px 30px rgba(143, 63, 82, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: var(--rose-dark);
+    text-decoration: none;
+    margin-right: 24px;
+    font-weight: 700;
+    font-size: 15px;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: var(--rose);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    min-height: 92vh;
+    padding: 90px 8%;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+    background:
+        radial-gradient(circle at top left, rgba(253, 236, 239, 0.95), transparent 38%),
+        linear-gradient(rgba(255,250,247,0.90), rgba(255,250,247,0.92)),
+        url("../images/pastry-hero.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.eyebrow {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--rose);
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    font-size: clamp(46px, 7vw, 88px);
+    line-height: 0.95;
+    margin: 0 0 24px;
+    color: var(--rose-dark);
+    letter-spacing: -2px;
+}
+
+.hero-text {
+    font-size: 20px;
+    max-width: 650px;
+    line-height: 1.8;
+    color: var(--soft-brown);
+    margin-bottom: 34px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 800;
+    transition: 0.25s ease;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--rose), #e8a8b6);
+    color: white;
+    box-shadow: 0 14px 30px rgba(201, 111, 133, 0.28);
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 36px rgba(201, 111, 133, 0.36);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--rose-dark);
+    border: 1px solid #f1cbd4;
+}
+
+.btn-secondary:hover {
+    background: var(--blush);
+    transform: translateY(-4px);
+}
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.84);
+    backdrop-filter: blur(16px);
+    padding: 38px;
+    border-radius: 34px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(244, 214, 220, 0.9);
+}
+
+.hero-card h2 {
+    color: var(--rose-dark);
+    margin: 0 0 18px;
+    font-size: 30px;
+}
+
+.hero-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+}
+
+.hero-card li {
+    padding: 13px 0;
+    border-bottom: 1px solid #f8dce2;
+    color: var(--soft-brown);
+    font-size: 17px;
+}
+
+.hero-card li::before {
+    content: "✦ ";
+    color: var(--rose);
+}
+
+.hero-card a {
+    color: var(--rose-dark);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.quick-links {
+    padding: 80px 8%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+}
+
+.link-card {
+    background: var(--white);
+    padding: 34px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: var(--brown);
+    box-shadow: 0 14px 40px rgba(143, 63, 82, 0.08);
+    transition: 0.25s ease;
+    border: 1px solid #f7dce2;
+}
+
+.link-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 55px rgba(143, 63, 82, 0.14);
+}
+
+.link-card span {
+    width: 58px;
+    height: 58px;
+    background: var(--blush);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+.link-card h3 {
+    color: var(--rose-dark);
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.link-card p {
+    color: var(--soft-brown);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.about-preview {
+    padding: 100px 8%;
+    background:
+        linear-gradient(135deg, #fff2f5, #fffaf7);
+    text-align: center;
+}
+
+.about-preview div {
+    max-width: 760px;
+    margin: auto;
+}
+
+.about-preview h2 {
+    font-size: clamp(34px, 5vw, 54px);
+    color: var(--rose-dark);
+    margin: 0 0 20px;
+    letter-spacing: -1px;
+}
+
+.about-preview p {
+    font-size: 19px;
+    line-height: 1.8;
+    color: var(--soft-brown);
+    margin-bottom: 30px;
+}
+
+.cta {
+    margin: 80px 8%;
+    padding: 80px 30px;
+    text-align: center;
+    background:
+        linear-gradient(135deg, rgba(143,63,82,0.92), rgba(232,168,182,0.92)),
+        url("../images/pastry-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 36px;
+    box-shadow: var(--shadow);
+}
+
+.cta h2 {
+    font-size: clamp(34px, 5vw, 56px);
+    margin: 0 0 12px;
+}
+
+.cta p {
+    font-size: 20px;
+    margin-bottom: 28px;
+}
+
+.btn-light {
+    background: white;
+    color: var(--rose-dark);
+}
+
+.btn-light:hover {
+    transform: translateY(-4px);
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--rose-dark);
+    color: white;
+    font-size: 14px;
+}
+
+/* ===== POLISHED ADMIN CRUD LAYOUT FIX ===== */
+
+.admin-page {
+    width: 100%;
+    max-width: 1550px;
+    margin: 0 auto;
+    padding: 80px 6%;
+}
+
+.admin-topbar {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto 45px;
+}
+
+.crud-layout {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 460px minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+}
+
+.admin-form-card,
+.admin-list-card {
+    width: 100%;
+}
+
+.admin-list-card {
+    overflow: hidden;
+}
+
+.pastry-admin-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 28px;
+}
+
+.pastry-admin-card {
+    width: 100%;
+}
+
+.admin-form-card .btn,
+.admin-card-actions .btn,
+.admin-card-actions button {
+    min-height: 48px;
+}
+
+.admin-card-actions form {
+    margin: 0;
+    width: auto;
+}
+
+.admin-card-actions .btn {
+    width: auto;
+}
+/* Fix uploaded pastry images from breaking admin/menu pages */
+
+.pastry-admin-card {
+    overflow: hidden;
+}
+
+.pastry-admin-card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.current-image-preview img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.pastry-card img {
+    display: block;
+    width: 30%;
+    height: 240px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+.admin-list-card img,
+.admin-form-card img {
+    max-width: 100%;
+}
+
+@media (min-width: 1400px) {
+    .crud-layout {
+        grid-template-columns: 500px minmax(0, 1fr);
+    }
+
+    .pastry-admin-grid {
+        grid-template-columns: repeat(3, minmax(260px, 1fr));
+    }
+}
+
+@media (max-width: 1100px) {
+    .admin-page {
+        padding: 60px 6%;
+    }
+
+    .crud-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .pastry-admin-grid {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .pastry-admin-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-topbar {
+        text-align: left;
+    }
+}
+
+@media (max-width: 800px) {
+    .admin-page {
+        padding: 60px 6%;
+    }
+
+    .admin-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1000px) {
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .quick-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    nav {
+        padding: 16px 6%;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px 14px 8px 0;
+    }
+
+    .hero {
+        padding: 65px 6%;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .quick-links {
+        grid-template-columns: 1fr;
+        padding: 60px 6%;
+    }
+
+    .about-preview {
+        padding: 75px 6%;
+    }
+
+    .cta {
+        margin: 60px 6%;
+        padding: 60px 24px;
+    }
+}
+
+.splash-wrapper {
+    width: 100%;
+    max-width: 1500px;
+    min-height: 820px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.splash-welcome {
+    padding: 60px;
+}
+
+.splash-welcome h1 {
+    font-size: clamp(72px, 8vw, 128px);
+    line-height: 0.9;
+    color: var(--rose-dark);
+    margin: 10px 0 30px;
+    letter-spacing: -4px;
+}
+
+.splash-welcome p {
+    max-width: 760px;
+    font-size: 26px;
+    line-height: 1.9;
+    color: var(--soft-brown);
+}
+
+.splash-card {
+    width: 100%;
+    max-width: 620px;
+    justify-self: end;
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(18px);
+    padding: 75px 65px;
+    border-radius: 42px;
+    box-shadow: 0 35px 90px rgba(143, 63, 82, 0.18);
+    border: 1px solid rgba(247, 220, 226, 0.95);
+    text-align: center;
+}
+
+.splash-card h2 {
+    color: var(--rose-dark);
+    font-size: 54px;
+    margin: 0 0 16px;
+}
+
+.splash-card p {
+    color: var(--soft-brown);
+    line-height: 1.8;
+    margin-bottom: 34px;
+    font-size: 18px;
+}
+
+.splash-card input {
+    width: 100%;
+    padding: 20px 24px;
+    border-radius: 999px;
+    border: 1px solid #f0c8d1;
+    margin-bottom: 18px;
+    font-size: 18px;
+    background: #fffaf7;
+}
+
+.splash-card .btn {
+    width: 100%;
+    padding: 18px 26px;
+    font-size: 17px;
+}
+.admin-actions {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+@media (max-width: 800px) {
+    .admin-actions {
+        grid-template-columns: 1fr;
+    }
+}
+.current-image-preview {
+    margin: 18px 0;
+    background: #fffaf7;
+    border: 1px solid #f7dce2;
+    border-radius: 22px;
+    padding: 16px;
+}
+
+.current-image-preview p {
+    margin: 0 0 10px;
+    color: var(--rose-dark);
+    font-weight: bold;
+}
+
+.current-image-preview img {
+    width: 100%;
+    max-height: 230px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.admin-form-card input[type="file"] {
+    background: #fffaf7;
+    cursor: pointer;
+}
+.about-hero {
+    min-height: 70vh;
+    padding: 100px 8%;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(rgba(255,250,247,0.88), rgba(255,250,247,0.92)),
+        url("../images/pastry-hero.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.about-hero div {
+    max-width: 850px;
+}
+
+.about-hero h1 {
+    font-size: clamp(46px, 7vw, 86px);
+    line-height: 0.95;
+    color: var(--rose-dark);
+    margin: 10px 0 25px;
+    letter-spacing: -2px;
+}
+
+.about-hero p {
+    font-size: 21px;
+    line-height: 1.8;
+    color: var(--soft-brown);
+    max-width: 720px;
+    margin-bottom: 32px;
+}
+
+.about-section {
+    padding: 90px 8%;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: clamp(36px, 5vw, 58px);
+    color: var(--rose-dark);
+    line-height: 1;
+    margin: 0 0 24px;
+}
+
+.about-text p {
+    font-size: 19px;
+    line-height: 1.8;
+    color: var(--soft-brown);
+}
+
+.about-card {
+    background: white;
+    padding: 42px;
+    border-radius: 34px;
+    box-shadow: var(--shadow);
+    border: 1px solid #f7dce2;
+}
+
+.about-card h3 {
+    color: var(--rose-dark);
+    font-size: 34px;
+    margin-top: 0;
+}
+
+.about-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-card li {
+    padding: 14px 0;
+    border-bottom: 1px solid #f7dce2;
+    color: var(--soft-brown);
+    font-size: 18px;
+}
+
+.about-card li::before {
+    content: "✦ ";
+    color: var(--rose);
+    font-weight: bold;
+}
+
+.values-section {
+    padding: 30px 8% 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.value-card {
+    background: white;
+    padding: 36px;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid #f7dce2;
+}
+
+.value-card span {
+    width: 60px;
+    height: 60px;
+    background: var(--blush);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.value-card h3 {
+    color: var(--rose-dark);
+    font-size: 25px;
+}
+
+.value-card p {
+    color: var(--soft-brown);
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+    .about-section,
+    .values-section {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero {
+        min-height: auto;
+        padding: 70px 6%;
+    }
+}
+
+/* Fix uploaded pastry images from breaking admin/menu pages */
+
+.pastry-admin-card {
+    overflow: hidden;
+}
+
+.pastry-admin-card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.current-image-preview img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.pastry-card img {
+    display: block;
+    width: 20%;
+    height: 240px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+.admin-list-card img,
+.admin-form-card img {
+    max-width: 100%;
+}
+.gallery-hero {
+    padding: 100px 8% 60px;
+    text-align: center;
+    background:
+        linear-gradient(rgba(255,250,247,0.9), rgba(255,250,247,0.95)),
+        url("../images/pastry-hero.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery-hero h1 {
+    font-size: clamp(46px, 7vw, 86px);
+    color: var(--rose-dark);
+    line-height: 0.95;
+    margin: 10px auto 22px;
+    max-width: 900px;
+}
+
+.gallery-hero p {
+    font-size: 21px;
+    color: var(--soft-brown);
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.gallery-grid {
+    padding: 70px 8% 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.gallery-card {
+    position: relative;
+    height: 420px;
+    border-radius: 34px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid #f7dce2;
+    background: white;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.06);
+}
+
+.gallery-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 28px;
+    background: linear-gradient(transparent, rgba(74, 44, 42, 0.88));
+    color: white;
+}
+
+.gallery-overlay span {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.gallery-overlay h3 {
+    font-size: 28px;
+    margin: 0 0 8px;
+}
+
+.gallery-overlay p {
+    line-height: 1.5;
+    margin: 0;
+}
+
+.empty-gallery {
+    grid-column: 1 / -1;
+    text-align: center;
+    background: white;
+    padding: 70px 30px;
+    border-radius: 34px;
+    box-shadow: var(--shadow);
+    border: 1px solid #f7dce2;
+}
+
+.empty-gallery h2 {
+    color: var(--rose-dark);
+    font-size: 42px;
+}
+
+.empty-gallery p {
+    color: var(--soft-brown);
+    font-size: 18px;
+    margin-bottom: 28px;
+}
+
+@media (max-width: 1000px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        padding: 50px 6%;
+    }
+
+    .gallery-card {
+        height: 360px;
+    }
+}
+/* ===== FINAL CUSTOM ORDERS PAGE FIX ===== */
+
+.custom-hero {
+    min-height: 65vh !important;
+    padding: 110px 8% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    background:
+        linear-gradient(rgba(255,250,247,0.88), rgba(255,250,247,0.94)),
+        url("../images/pastry-hero.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.custom-hero div {
+    max-width: 950px !important;
+}
+
+.custom-hero h1 {
+    font-size: clamp(54px, 8vw, 104px) !important;
+    line-height: 0.95 !important;
+    color: var(--rose-dark) !important;
+    margin: 10px 0 25px !important;
+}
+
+.custom-hero p {
+    max-width: 760px !important;
+    margin: 0 auto !important;
+    font-size: 21px !important;
+    line-height: 1.8 !important;
+    color: var(--soft-brown) !important;
+}
+
+.custom-layout {
+    width: 100% !important;
+    max-width: 1450px !important;
+    margin: 0 auto !important;
+    padding: 90px 6% !important;
+    display: grid !important;
+    grid-template-columns: 0.85fr 1.15fr !important;
+    gap: 45px !important;
+    align-items: start !important;
+}
+
+.custom-info-card,
+.custom-form-card {
+    width: 100% !important;
+    background: white !important;
+    border-radius: 34px !important;
+    padding: 48px !important;
+    box-shadow: var(--shadow) !important;
+    border: 1px solid #f7dce2 !important;
+}
+
+.custom-info-card h2,
+.custom-form-card h2 {
+    color: var(--rose-dark) !important;
+    font-size: 38px !important;
+    margin-top: 0 !important;
+}
+
+.custom-info-card ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 0 35px !important;
+}
+
+.custom-info-card li {
+    padding: 14px 0 !important;
+    border-bottom: 1px solid #f7dce2 !important;
+    color: var(--soft-brown) !important;
+    font-size: 18px !important;
+}
+
+.custom-info-card li::before {
+    content: "✦ " !important;
+    color: var(--rose) !important;
+}
+
+.custom-note {
+    background: #fff7f8 !important;
+    padding: 26px !important;
+    border-radius: 24px !important;
+}
+
+.custom-form-card form {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.custom-form-card label {
+    display: block !important;
+    margin: 16px 0 8px !important;
+    font-weight: bold !important;
+    color: var(--rose-dark) !important;
+}
+
+.custom-form-card input,
+.custom-form-card textarea,
+.custom-form-card select {
+    width: 100% !important;
+    padding: 16px 18px !important;
+    border-radius: 18px !important;
+    border: 1px solid #f0c8d1 !important;
+    background: #fffaf7 !important;
+    font-size: 15px !important;
+    margin-bottom: 6px !important;
+}
+
+.custom-form-card textarea {
+    min-height: 180px !important;
+    resize: vertical !important;
+}
+
+.custom-form-card button {
+    margin-top: 24px !important;
+    width: 100% !important;
+}
+
+@media (max-width: 950px) {
+    .custom-layout {
+        grid-template-columns: 1fr !important;
+        padding: 60px 6% !important;
+    }
+
+    .custom-hero {
+        min-height: auto !important;
+        padding: 75px 6% !important;
+    }
+}
+
+.custom-layout {
+    padding: 90px 8%;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.custom-info-card,
+.custom-form-card {
+    background: white;
+    border-radius: 34px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+    border: 1px solid #f7dce2;
+}
+
+.custom-info-card h2,
+.custom-form-card h2 {
+    color: var(--rose-dark);
+    font-size: 38px;
+    margin-top: 0;
+}
+
+.custom-info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 35px;
+}
+
+.custom-info-card li {
+    padding: 14px 0;
+    border-bottom: 1px solid #f7dce2;
+    color: var(--soft-brown);
+    font-size: 18px;
+}
+
+.custom-info-card li::before {
+    content: "✦ ";
+    color: var(--rose);
+}
+
+.custom-note {
+    background: #fff7f8;
+    padding: 26px;
+    border-radius: 24px;
+}
+
+.custom-note h3 {
+    margin-top: 0;
+    color: var(--rose-dark);
+}
+
+.custom-note p {
+    color: var(--soft-brown);
+    line-height: 1.7;
+}
+
+.custom-form-card label {
+    display: block;
+    margin: 16px 0 8px;
+    font-weight: bold;
+    color: var(--rose-dark);
+}
+
+.custom-form-card input,
+.custom-form-card textarea,
+.custom-form-card select {
+    width: 100%;
+    padding: 16px 18px;
+    border-radius: 18px;
+    border: 1px solid #f0c8d1;
+    background: #fffaf7;
+    font-size: 15px;
+}
+
+.custom-form-card textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+.custom-form-card button {
+    margin-top: 24px;
+    width: 100%;
+}
+
+@media (max-width: 950px) {
+    .custom-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .custom-hero {
+        min-height: auto;
+        padding: 75px 6%;
+    }
+}
+.contact-hero {
+    padding: 100px 8% 70px;
+    text-align: center;
+    background:
+        linear-gradient(rgba(255,250,247,0.9), rgba(255,250,247,0.96)),
+        url("../images/pastry-hero.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-hero h1 {
+    font-size: clamp(46px, 7vw, 86px);
+    color: var(--rose-dark);
+    line-height: 0.95;
+    margin: 10px auto 22px;
+    max-width: 900px;
+}
+
+.contact-hero p {
+    font-size: 21px;
+    color: var(--soft-brown);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.contact-layout {
+    padding: 80px 8% 100px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.contact-info-card,
+.contact-form-card {
+    background: white;
+    border-radius: 34px;
+    padding: 42px;
+    box-shadow: var(--shadow);
+    border: 1px solid #f7dce2;
+}
+
+.contact-info-card h2,
+.contact-form-card h2 {
+    color: var(--rose-dark);
+    font-size: 38px;
+    margin-top: 0;
+}
+
+.contact-info-card > p {
+    color: var(--soft-brown);
+    line-height: 1.8;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.contact-detail {
+    display: flex;
+    gap: 18px;
+    padding: 20px 0;
+    border-bottom: 1px solid #f7dce2;
+}
+
+.contact-detail span {
+    width: 54px;
+    height: 54px;
+    background: var(--blush);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-detail h3 {
+    margin: 0 0 6px;
+    color: var(--rose-dark);
+}
+
+.contact-detail p {
+    margin: 0;
+    color: var(--soft-brown);
+}
+
+.contact-info-card .btn {
+    margin-top: 30px;
+}
+
+.contact-form-card label {
+    display: block;
+    margin: 16px 0 8px;
+    font-weight: bold;
+    color: var(--rose-dark);
+}
+
+.contact-form-card input,
+.contact-form-card textarea {
+    width: 100%;
+    padding: 16px 18px;
+    border-radius: 18px;
+    border: 1px solid #f0c8d1;
+    background: #fffaf7;
+    font-size: 15px;
+}
+
+.contact-form-card textarea {
+    min-height: 190px;
+    resize: vertical;
+}
+
+.contact-form-card button {
+    margin-top: 24px;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+        padding: 60px 6%;
+    }
+}
+
+.message-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.message-card {
+    background: white;
+    border-radius: 30px;
+    padding: 32px;
+    box-shadow: var(--shadow);
+    border: 1px solid #f7dce2;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid #f7dce2;
+    padding-bottom: 16px;
+    margin-bottom: 18px;
+}
+
+.message-header h2 {
+    margin: 0;
+    color: var(--rose-dark);
+    font-size: 28px;
+}
+
+.message-header span {
+    color: var(--soft-brown);
+    font-size: 14px;
+}
+
+.message-card p {
+    color: var(--soft-brown);
+    line-height: 1.6;
+}
+
+.message-body {
+    background: #fffaf7;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0;
+    color: var(--brown);
+    line-height: 1.7;
+}
+
+.message-card form {
+    margin: 0;
+}
+
+.message-card .delete-btn {
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .message-grid {
+        grid-template-columns: 1fr;
+    }
+}
